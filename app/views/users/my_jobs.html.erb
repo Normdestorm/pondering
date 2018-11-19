@@ -1,0 +1,21 @@
+<h1> My Jobs</h1>
+
+<h3> Search for Jobs </h3>
+<div id= "job-lookup">
+    <%= form_tag search_jobs_path, method: :get, id: "job-lookup-form" do %>
+    <div class="form-group row no-padding text-center col-md-12">
+        <div class="col-md-10">
+            <%= text_field_tag :job, params[:job],
+            placeholder: "Job ", autofocus:true,
+            class: "form-control search-box input-lg"%>
+            
+        </div>
+        <div class="col-md-2"><br>
+            <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+            
+          <i class="fa fa-search"></i> Look up a job
+          <% end %>
+        </div>
+    </div>
+    <% end %>
+</div>
