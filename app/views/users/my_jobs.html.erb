@@ -5,17 +5,28 @@
     <%= form_tag search_jobs_path, method: :get, id: "job-lookup-form" do %>
     <div class="form-group row no-padding text-center col-md-12">
         <div class="col-md-10">
-            <%= text_field_tag :job, params[:job],
-            placeholder: "Job ", autofocus:true,
-            class: "form-control search-box input-lg"%>
             
         </div>
-        <div class="col-md-2"><br>
-            <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
-            
-          <i class="fa fa-search"></i> Look up a job
-          <% end %>
+        <div class="col-md-10"><br><br>
+        <%= text_field_tag :job, params[:job], placeholder: "Job title", autofocus: true,
+        class: "form-control search-box input-lg" %>
+        </div><br>
+        
+        <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do%>
+        <i class = "fa fa-search"></i> Look up a Job
+        <% end %>
         </div>
+        <% if @jobs %>
+            <% @jobs.each do |job|%>
+                <h3><%= job.location %></h3>
+                <p><%= job.description %></p>
+            <% end %>
+         <% end %>
     </div>
+    
+    
     <% end %>
-</div>
+    </div>
+    
+            
+        

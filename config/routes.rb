@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
     get 'welcome/index'
-    root 'welcome#index'
+    root 'users#my_jobs'
     get 'my_jobs', to: "users#my_jobs"
     get 'search_jobs', to: 'jobs#search'
 
