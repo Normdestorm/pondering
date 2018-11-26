@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-    get 'welcome/index'
-    root 'users#my_jobs'
+    root 'welcome#index'
     get 'my_jobs', to: "users#my_jobs"
     get 'search_jobs', to: 'jobs#search'
+    resources :job_applications, only: [:create]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
