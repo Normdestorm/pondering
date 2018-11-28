@@ -13,11 +13,21 @@
       <%= f.label :first_name %>
       <%= f.text_field :first_name, class: 'form-control' %>          
     </div>
-    <div class="col-md-6 no-padding left-padding">
+    <div class="col-md-6 no-padding">
       <%= f.label :last_name %>
       <%= f.text_field :last_name, class: 'form-control' %>
     </div>
   </div>
+  
+ <div class="control-group">
+  <div class="attach-set">
+    <lb>Upload CV</lb>
+    <div class="input-append">
+      <input id="file-display" class="input-large uneditable-input" type="text">
+      <a id="upload-btn" class="btn"><i class="icon-upload-alt"></i> Browse</a>
+    </div>
+  </div> <!-- /attach-set -->
+</div> <!-- /control-group -->
 
   <div class="form-group">
     <%= f.label :password %>
