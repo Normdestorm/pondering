@@ -1,0 +1,28 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Job_Title</th>
+      <th>Location</th>
+      <th>Salary</th>
+      <% if @user = current_user %>
+        <th>Actions</th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @job_applications.each do |job_application|%>
+      <tr>
+        <td><%= job_application.job_title %></td>
+        <td><%= job_application.location %></td>
+        <td><%= job_application.salary %></td>
+        <% if @user == current_user %>
+          <td><%= link_to "Delete this job", job_application_path(job_application), 
+                      method: :delete,
+                      data: {confirm: "Are you sure?"}, 
+                      class: "btn btn-xs btn-danger" %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

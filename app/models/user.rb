@@ -6,4 +6,9 @@ class User < ActiveRecord::Base
          
   has_many :job_applications
   has_many :jobs, through: :job_applications
+  
+  def full_name
+    return "#{first_name} #{last_name}".strip if (first_name || last_name)
+    "Anonymous"
+  end
 end
