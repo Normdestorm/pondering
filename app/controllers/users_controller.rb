@@ -6,6 +6,6 @@ class UsersController < ApplicationController
     end
     
     def my_companies
-        
+    @companies = current_user.companies    
     end
 end
