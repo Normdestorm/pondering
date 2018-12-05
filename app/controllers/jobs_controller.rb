@@ -10,10 +10,10 @@ class JobsController < ApplicationController
       flash[:danger] = "You have entered incorrect search" unless @job
     
     end
-   render 'users/my_jobs'
+    render 'users/my_jobs'
     end
    def job_params
      params.require(:job).permit(:job_title, :description, :location, :salary)
    end
-
+  
 end

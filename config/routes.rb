@@ -5,10 +5,11 @@ Rails.application.routes.draw do
     get 'my_jobs', to: "users#my_jobs"
     get 'search_jobs', to: 'jobs#search'
     get 'my_companies', to: 'users#my_companies'
+    get 'search_companies', to: 'users#search'
     
     resources :job_applications, only: [:create, :destroy]
-    resources :users, only: [:show]
-    resources :companies    
+    resources :users, only: [:show, :create]
+    resources :companies  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

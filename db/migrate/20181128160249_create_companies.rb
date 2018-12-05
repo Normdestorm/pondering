@@ -1,10 +1,10 @@
 class CreateCompanies < ActiveRecord::Migration
   def change
     create_table :companies do |t|
-      t.belongs_to :user
-      t.belongs_to :friend, class: 'User'
-
+      t.string :company_name
+      
       t.timestamps null: false
     end
+    
   end
 end

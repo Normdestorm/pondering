@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181128160249) do
+ActiveRecord::Schema.define(version: 20181204113126) do
 
   create_table "companies", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "friend_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "company_name"
   end
 
   create_table "job_applications", force: :cascade do |t|

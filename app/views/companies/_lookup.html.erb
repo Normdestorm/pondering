@@ -1,0 +1,38 @@
+<h1> My Companies</h1>
+
+<h3> Search for Companies </h3>
+<div id= "Company-lookup">
+    <%= form_tag search_companies_path, method: :get, id: "company-lookup-form" do %>
+    <div class="form-group row no-padding text-center col-md-12">
+        <div class="col-md-10">
+            
+        </div>
+        <div class="col-md-10"><br><br>
+        <%= text_field_tag :search_parm, params[:search_param], placeholder: "Enter Company Name", autofocus: true,
+        class: "form-control search-box input-lg" %>
+        </div><br>
+        <br>
+        
+        <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do%>
+        <i class = "fa fa-search"></i> Search a company
+        <% end %>
+        </div>
+        
+        
+        <% if @jobs %>
+        <div class ="well results-block">
+            <% @jobs.each do |job|%>
+                <strong> Job Title: </strong><%= job.job_title%></p>
+                <strong> Location: </strong><%= job.location %></p>
+                <strong> Description: </strong><%= job.description %></p>
+                <strong> Salary: </strong><%= job.salary %></p>
+                <%= link_to "Add to my jobs", job_applications_path(job_title: job.job_title),
+                                              class: "btn btn-xs btn-success", 
+                                              method: :post %>
+            <% end %>
+            <% end %>
+         </div>
+    </div>
+    
+    <% end %>
+    </div>
