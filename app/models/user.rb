@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          
   has_many :job_applications
   has_many :jobs, through: :job_applications
-  has_many :companies
+  has_many :user_companies
   
   
   def full_name

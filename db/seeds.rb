@@ -8,5 +8,9 @@
 Job.create(job_title: "Software Engineer", location: "Cork", description: "Rails engineer", preferred_experience: "ten years", salary: 100000)
 Job.create(job_title: "IT Consultant", location: "Kildare", description: "Project Manager large site", preferred_experience: "four years", salary: 100000)
 Job.create(job_title: "Software Engineer", location: "Dublin", description: "Ruby engineer", preferred_experience: "5 years years", salary: 150000)
-Company.create(company_name :Alcatraz)
-Company.create(company_name :Pilz)
+Company.create(company_name: 'Alcatraz')
+Company.create(company_name: 'Pilz')
+
+if Rails.env.development?
+    # put in here will not end up on production
+end

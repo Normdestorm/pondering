@@ -1,0 +1,7 @@
+<%= render 'search' %>
+
+<% @results.each do |company| %>
+  <div>
+      <%= company.company_name %>
+  </div>
+<% end %>

@@ -1,20 +1,20 @@
-<h1> My Companies</h1>
+<h1> My Jobs</h1>
 
-<h3> Search for Companies </h3>
-<div id= "Company-lookup">
-    <%= form_tag company_searches_path, method: :get, id: "company-lookup-form" do %>
+<h3> Search for Jobs </h3>
+<div id= "job-lookup">
+    <%= form_tag search_jobs_path, method: :get, id: "job-lookup-form" do %>
     <div class="form-group row no-padding text-center col-md-12">
         <div class="col-md-10">
             
         </div>
         <div class="col-md-10"><br><br>
-        <%= text_field_tag :search, params[:search_param], placeholder: "Enter Company Name", autofocus: true,
+        <%= text_field_tag :job, params[:job], placeholder: "Job title", autofocus: true,
         class: "form-control search-box input-lg" %>
         </div><br>
         <br>
         
         <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do%>
-        <i class = "fa fa-search"></i> Search a company
+        <i class = "fa fa-search"></i> Look up a Job
         <% end %>
         </div>
         
@@ -36,3 +36,6 @@
     
     <% end %>
     </div>
+    <%= render 'jobs/list' %>
+            
+        

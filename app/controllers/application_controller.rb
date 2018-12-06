@@ -4,4 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
   #helper_method :current_user
+  
+  before_filter do
+    puts self.controller_name
+  end
 end

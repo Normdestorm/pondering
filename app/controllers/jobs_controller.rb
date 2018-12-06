@@ -1,19 +1,19 @@
 class JobsController < ApplicationController
 
   def search
-    ##byebug
+    @job_applications = current_user.job_applications
     if params[:job].blank?
       flash[:danger] = "You have entered and empty search"
     else
-    @jobs = Job.where("job_title like ?", "%#{params[:job]}%")
+      @jobs = Job.where("lower(job_title) like ?", "%#{params[:job].downcase}%")
    
-      flash[:danger] = "You have entered incorrect search" unless @job
-    
+      flash[:danger] = "Your search matched no jobs" unless @jobs
+       
     end
-    render 'users/my_jobs'
-    end
-   def job_params
-     params.require(:job).permit(:job_title, :description, :location, :salary)
-   end
+  end
+  
+  def job_params
+    params.require(:job).permit(:job_title, :description, :location, :salary)
+ end
   
 end

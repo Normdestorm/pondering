@@ -12,11 +12,12 @@
   <tbody>
     <% @job_applications.each do |job_application|%>
       <tr>
-        <td><%= job_application.job_title %></td>
-        <td><%= job_application.location %></td>
-        <td><%= job_application.salary %></td>
+        <td><%= job_application.job.job_title %></td>
+        <td><%= job_application.job.location %></td>
+        <td><%= job_application.job.salary %></td>
         <% if @user == current_user %>
-          <td><%= link_to "Delete this job", job_application_path(job_application), 
+        <%= job_application.class.name %>
+          <td><%= link_to "Delete this job", job_application_path(job_application.id), 
                       method: :delete,
                       data: {confirm: "Are you sure?"}, 
                       class: "btn btn-xs btn-danger" %>
